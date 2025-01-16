@@ -41,13 +41,13 @@ func validateAppServingCSR(req *x509.CertificateRequest, usages []capi.KeyUsage)
 	}
 
 	if len(req.DNSNames) == 0 && len(req.IPAddresses) == 0 {
-		return fmt.Errorf("DNS or IP subjectAltName is required")
+		return fmt.Errorf("dns or ip subjectAltName is required")
 	}
 	if len(req.EmailAddresses) > 0 {
-		return fmt.Errorf("Email subjectAltName are not allowed")
+		return fmt.Errorf("email subjectAltName are not allowed")
 	}
 	if len(req.URIs) > 0 {
-		return fmt.Errorf("URI subjectAltName are not allowed")
+		return fmt.Errorf("uri subjectAltName are not allowed")
 	}
 
 	return nil
