@@ -1,5 +1,4 @@
 # certificate-controller
-> copy and modify github.com/kubernetes/kubernetes/cmd/kube-controller-manager/app/certificates.go
 
 从Kubernetes 1.22版本开始，稳定版的CertificateSigningRequest API(`certificates.k8s.io/v1`)不允许将`singerName`设置为`kubernetes.io/legacy-unknown`。为了使用Kubernetes证书保护工作负载，实现一个自定义的证书签署者。该自定义签署者包含一下信息:
 
